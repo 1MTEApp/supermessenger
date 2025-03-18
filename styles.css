@@ -1,0 +1,160 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+#sidebar {
+    width: 250px;
+    border-right: 1px solid #ddd;
+    padding: 20px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+#sidebar h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #007bff;
+}
+
+#username-input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#register-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#register-button:hover {
+    background-color: #0056b3;
+}
+
+#user-list {
+    margin-top: 20px;
+    overflow-y: auto;
+}
+
+.user-list-item {
+    cursor: pointer;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s ease;
+}
+
+.user-list-item:last-child {
+    border-bottom: none;
+}
+
+.user-list-item:hover {
+    background-color: #e9ecef;
+}
+
+.user-list-item.active {
+    font-weight: bold;
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+#chat-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+#chat-header {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+#chat-header h3 {
+    margin: 0;
+    color: #28a745;
+}
+
+#messages {
+    flex-grow: 1;
+    border: 1px solid #ccc;
+    padding: 15px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.message {
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    border: 1px solid #eee;
+    word-break: break-word;
+}
+
+.message strong {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.message span {
+    color: #6c757d;
+    font-size: 0.9em;
+}
+
+#input-container {
+    display: flex;
+}
+
+#message-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+#send-button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#send-button:hover {
+    background-color: #1e7e34;
+}
+
+/* Стили для сообщений "Вы" */
+.message.sent-by-me {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+.message.sent-by-me strong {
+    color: #155724;
+}
