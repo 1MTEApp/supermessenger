@@ -119,9 +119,13 @@ async function fetchPrivateMessages(otherUserId) {
 
 function displayPrivateMessage(message) {
     const messageDiv = document.createElement('div');
+    messageDiv.classList.add('message');
     const timestamp = new Date(message.timestamp).toLocaleTimeString();
     const sender = message.sender_id === currentUserId ? 'Вы' : onlineUsers?.[message.sender_id];
-    messageDiv.textContent = `(${timestamp}) ${sender}: ${message.text}`;
+    messageDiv.innerHTML = `<strong>${sender}:</strong> <span>(${timestamp})</span><p>${message.text}</p>`;
+    if (message.sender_id === currentUserId) {
+        messageDiv.classList.add('sent-by-me');
+    }
     messagesDiv.appendChild(messageDiv);
 }
 
