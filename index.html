@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Простой мессенджер</title>
+    <style>
+        #messages {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            height: 300px;
+            overflow-y: scroll;
+        }
+        #input-container {
+            display: flex;
+        }
+        #message-input {
+            flex-grow: 1;
+            padding: 8px;
+        }
+        #send-button {
+            padding: 8px 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Простой мессенджер</h1>
+    <div id="messages"></div>
+    <div id="input-container">
+        <input type="text" id="user-input" placeholder="Ваше имя">
+        <input type="text" id="message-input" placeholder="Сообщение">
+        <button id="send-button">Отправить</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
