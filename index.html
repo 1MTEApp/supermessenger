@@ -3,14 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Простой мессенджер</title>
+    <title>Приватный чат</title>
     <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            height: 100vh;
+            margin: 0;
+        }
+        #sidebar {
+            width: 200px;
+            border-right: 1px solid #ccc;
+            padding: 10px;
+        }
+        #chat-container {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+        #chat-header {
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 10px;
+        }
         #messages {
+            flex-grow: 1;
             border: 1px solid #ccc;
             padding: 10px;
-            margin-bottom: 10px;
-            height: 300px;
             overflow-y: scroll;
+            margin-bottom: 10px;
         }
         #input-container {
             display: flex;
@@ -22,15 +44,31 @@
         #send-button {
             padding: 8px 15px;
         }
+        .user-list-item {
+            cursor: pointer;
+            padding: 5px 0;
+        }
+        .user-list-item.active {
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
-    <h1>Простой мессенджер</h1>
-    <div id="messages"></div>
-    <div id="input-container">
-        <input type="text" id="user-input" placeholder="Ваше имя">
-        <input type="text" id="message-input" placeholder="Сообщение">
-        <button id="send-button">Отправить</button>
+    <div id="sidebar">
+        <h2>Онлайн пользователи</h2>
+        <input type="text" id="username-input" placeholder="Ваше имя">
+        <button id="register-button">Войти</button>
+        <div id="user-list"></div>
+    </div>
+    <div id="chat-container" style="display: none;">
+        <div id="chat-header">
+            <h3 id="current-chat-user">Выберите пользователя</h3>
+        </div>
+        <div id="messages"></div>
+        <div id="input-container">
+            <input type="text" id="message-input" placeholder="Сообщение">
+            <button id="send-button">Отправить</button>
+        </div>
     </div>
 
     <script src="script.js"></script>
